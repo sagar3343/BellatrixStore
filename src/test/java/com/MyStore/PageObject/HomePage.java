@@ -27,13 +27,33 @@ public class HomePage {
 		Thread.sleep(1000);
 	}
 	
-	@FindBy(xpath = "(//a[@class=\"added_to_cart wc-forward\"])[1]")
+	@FindBy(xpath = "(//a[text()=\"Add to cart\"])[3]")
+	WebElement addToCart2;
+	
+	public void clickOnAddToCart2() throws InterruptedException {
+		
+		addToCart2.click();
+		Thread.sleep(1000);
+	}
+	
+	@FindBy(xpath = "(//a[@class=\"added_to_cart wc-forward\"])[2]")
 	WebElement viewCart;
 	
 	public void clickOnViewCart() throws InterruptedException {
 		
 		viewCart.click();
+		Thread.sleep(2000);
 	}
 	
+	@FindBy(xpath = "(//a[@class=\"added_to_cart wc-forward\"])[1]")
+	WebElement viewCart2;
 	
+	public void clickOnViewCart2() throws InterruptedException {
+		
+		viewCart.click();
+		Thread.sleep(2000);
+		JavascriptExecutor AS = (JavascriptExecutor)ldriver;
+		AS.executeScript("window.scrollBy(0, 500)","");
+		Thread.sleep(2000);
+	}
 }
